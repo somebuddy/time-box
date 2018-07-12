@@ -12,6 +12,6 @@ import { UserWidgetComponent } from './user-widget/user-widget.component';
     CommonModule,
     AuthRoutingModule
   ],
-  declarations: [SignUpComponent, SignInComponent, UserProfileComponent, UserWidgetComponent]
+  declarations: [SignUpComponent, SignInComponent, UserProfileComponent, UserWidgetComponent],
 })
 export class AuthModule { }

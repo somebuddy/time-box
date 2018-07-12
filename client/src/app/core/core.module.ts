@@ -7,6 +7,9 @@ import { AuthModule } from './auth/auth.module';
     CommonModule,
     AuthModule
   ],
-  declarations: []
+  declarations: [],
+  exports: [
+    AuthModule,
+  ]
 })
 export class CoreModule { }
