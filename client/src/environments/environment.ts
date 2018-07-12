@@ -3,7 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: 'AIzaSyAmaw8WaeyiRiEZEZPqzKxc64w-fIt-h7c',
+    authDomain: 'time-box-dev.firebaseapp.com',
+    databaseURL: 'https://time-box-dev.firebaseio.com',
+    projectId: 'time-box-dev',
+    storageBucket: 'time-box-dev.appspot.com',
+    messagingSenderId: '84789308018'
+  }
 };
 
 /*
