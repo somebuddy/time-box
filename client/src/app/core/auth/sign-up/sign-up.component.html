@@ -4,3 +4,4 @@
 <div *ngIf="auth.user | async">User logged</div>
 <div *ngIf="!(auth.user | async)">Anonymous user</div>
 <button (click)="auth.signUpWithGoogle()">Sign up with google</button>
+<button (click)="auth.signOut()">Sign out</button>

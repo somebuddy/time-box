@@ -32,4 +32,8 @@ export class AuthService {
       return credentrals.user;
     });
   }
+
+  signOut() {
+    return this.afAuth.auth.signOut();
+  }
 }
