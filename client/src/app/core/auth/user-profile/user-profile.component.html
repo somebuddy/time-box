@@ -1,3 +1,5 @@
 <p>
   user-profile works!
 </p>
+<div *ngIf="auth.user | async">User logged</div>
+<div *ngIf="!(auth.user | async)">Anonymous user</div>
