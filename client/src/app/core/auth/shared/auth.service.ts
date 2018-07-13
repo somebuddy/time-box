@@ -4,6 +4,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { UserProfile } from '../models/user-profile';
 import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
+import { auth } from 'firebase';
 
 @Injectable({
   providedIn: 'root'
@@ -23,5 +24,12 @@ export class AuthService {
         }
       })
     );
+  }
+
+  signUpWithGoogle() {
+    const provider = new auth.GoogleAuthProvider();
+    return this.afAuth.auth.signInWithPopup(provider).then(credentrals => {
+      return credentrals.user;
+    });
   }
 }
