@@ -29,7 +29,10 @@ export class AuthService {
   signUpWithGoogle() {
     const provider = new auth.GoogleAuthProvider();
     return this.afAuth.auth.signInWithPopup(provider).then(credentrals => {
-      return credentrals.user;
+      const user = credentrals.user;
+      const userDoc = this.afStore.doc<UserProfile>(`users/${user.uid}`);
+      const { uid, email, displayName, photoURL } = user;
+      userDoc.set({ uid, email, displayName, photoURL}, { merge: true });
     });
   }
 
