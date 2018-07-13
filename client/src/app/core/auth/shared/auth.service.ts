@@ -28,15 +28,22 @@ export class AuthService {
 
   signUpWithGoogle() {
     const provider = new auth.GoogleAuthProvider();
-    return this.afAuth.auth.signInWithPopup(provider).then(credentrals => {
-      const user = credentrals.user;
-      const userDoc = this.afStore.doc<UserProfile>(`users/${user.uid}`);
-      const { uid, email, displayName, photoURL } = user;
-      userDoc.set({ uid, email, displayName, photoURL}, { merge: true });
-    });
+    return this.oAuth(provider);
   }
 
   signOut() {
     return this.afAuth.auth.signOut();
+  }
+
+  private oAuth(provider) {
+    return this.afAuth.auth.signInWithPopup(provider).then(credentrals => {
+      return this.updateUserProfile(credentrals.user);
+    });
+  }
+
+  private updateUserProfile(user) {
+    const userDoc = this.afStore.doc<UserProfile>(`users/${user.uid}`);
+    const { uid, email, displayName, photoURL } = user;
+    return userDoc.set({ uid, email, displayName, photoURL}, { merge: true });
   }
 }

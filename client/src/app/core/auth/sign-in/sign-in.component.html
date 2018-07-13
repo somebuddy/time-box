@@ -1,5 +1,1 @@
-<p>
-  sign-in works!
-</p>
-<div *ngIf="auth.user | async">User logged</div>
-<div *ngIf="!(auth.user | async)">Anonymous user</div>
+<button (click)="auth.signUpWithGoogle()">Sign in with google</button>
