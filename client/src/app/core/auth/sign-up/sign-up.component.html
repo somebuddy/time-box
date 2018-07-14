@@ -2,10 +2,12 @@
   <header class="mat-toolbar">Create account</header>
   <article class="sign-up-social">
     <header class="mat-caption">Quick connent with</header>
-    <button mat-raised-button (click)="auth.signUpWithGoogle()">Google</button>
-    <button mat-raised-button disabled>Facebook</button>
-    <button mat-raised-button disabled>Twitter</button>
-    <button mat-raised-button disabled>Github</button>
+    <div class="social-options">
+      <button mat-raised-button (click)="auth.signUpWithGoogle()">Google</button>
+      <button mat-raised-button disabled>Facebook</button>
+      <button mat-raised-button disabled>Twitter</button>
+      <button mat-raised-button disabled>Github</button>
+    </div>
   </article>
   <article class="sign-up-email">
     <header class="mat-caption">or register with email</header>
