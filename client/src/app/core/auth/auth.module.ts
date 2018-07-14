@@ -8,13 +8,15 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserWidgetComponent } from './user-widget/user-widget.component';
+import { UiModule } from '../../ui/ui.module';
 
 @NgModule({
   imports: [
     CommonModule,
     AuthRoutingModule,
     AngularFireAuthModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    UiModule,
   ],
   declarations: [SignUpComponent, SignInComponent, UserProfileComponent, UserWidgetComponent],
 })
