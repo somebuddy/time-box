@@ -2,6 +2,6 @@
   <div>Display name: {{ user.displayName }}</div>
   <div>Email: {{ user.email }}</div>
   <img [src]="user.photoURL" width="60px">
-  <button (click)="auth.signOut()">Sign out</button>
+  <button mat-raised-button color="warn" (click)="auth.signOut()">Sign out</button>
 </div>
 <div *ngIf="!(auth.user | async)">Anonymous user</div>
