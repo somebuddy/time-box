@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { FormsModule } from '@angular/forms';
 
 import { AuthRoutingModule } from './auth-routing.module';
 import { SignUpComponent } from './sign-up/sign-up.component';
@@ -16,6 +17,7 @@ import { UiModule } from '../../ui/ui.module';
     AuthRoutingModule,
     AngularFireAuthModule,
     AngularFirestoreModule,
+    FormsModule,
     UiModule,
   ],
   declarations: [SignUpComponent, SignInComponent, UserProfileComponent, UserWidgetComponent],

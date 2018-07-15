@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../shared/auth.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'tb-sign-up',
@@ -11,6 +12,10 @@ export class SignUpComponent implements OnInit {
   constructor(public auth: AuthService) { }
 
   ngOnInit() {
+  }
+
+  register(regForm: NgForm) {
+    console.log(regForm);
   }
 
 }
