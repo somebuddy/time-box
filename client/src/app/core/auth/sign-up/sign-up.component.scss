@@ -63,3 +63,23 @@
         margin: 1.5rem 0;
     }
 }
+
+.mat-raised-button.mat-google:not(:disabled) {
+    background: #dd4b39;
+    color: white;
+}
+
+.mat-raised-button.mat-twitter:not(:disabled) {
+    background: #1da1f2;
+    color: white;
+}
+
+.mat-raised-button.mat-facebook:not(:disabled) {
+    background: #3b5998;
+    color: white;
+}
+
+.mat-raised-button.mat-github:not(:disabled) {
+    background: #333;
+    color: white;
+}
