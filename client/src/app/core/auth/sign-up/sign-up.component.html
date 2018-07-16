@@ -21,11 +21,11 @@
     <header class="mat-caption">or register with email</header>
     <form class="sign-up-form" #regForm="ngForm" (ngSubmit)="register(regForm)">
       <mat-form-field>
-        <input matInput email placeholder="Your email..." type="email">
+        <input matInput email ngModel name="email" placeholder="Your email..." type="email">
         <mat-icon matSuffix>email</mat-icon>
       </mat-form-field>
       <mat-form-field>
-        <input matInput password placeholder="Your password..." type="password">
+        <input matInput password ngModel name="password" placeholder="Your password..." type="password">
         <mat-icon matSuffix>security</mat-icon>
       </mat-form-field>
       <button type="submit" class="submit-button" mat-stroked-button color="primary">Get started</button>

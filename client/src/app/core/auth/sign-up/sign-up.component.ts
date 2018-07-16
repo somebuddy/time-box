@@ -15,7 +15,13 @@ export class SignUpComponent implements OnInit {
   }
 
   register(regForm: NgForm) {
-    console.log(regForm);
+    const { email, password } = regForm.value;
+    this.auth.signUpWithEmail(email, password).then(() => {
+      console.log('User registered');
+    })
+    .catch(error => {
+      console.log('Registration error', error);
+    });
   }
 
 }

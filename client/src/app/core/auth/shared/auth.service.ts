@@ -16,7 +16,6 @@ export class AuthService {
     console.log('Auth service created');
     this.user = this.afAuth.authState.pipe(
       switchMap(user => {
-        console.log('User checked');
         if (user) {
           return afStore.doc<UserProfile>(`users/${user.uid}`).valueChanges();
         } else {
@@ -31,13 +30,20 @@ export class AuthService {
     return this.oAuth(provider);
   }
 
+  signUpWithEmail(email: string, password: string) {
+    return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
+      .then(credential => {
+        return this.updateUserProfile(credential.user);
+      });
+  }
+
   signOut() {
     return this.afAuth.auth.signOut();
   }
 
   private oAuth(provider) {
-    return this.afAuth.auth.signInWithPopup(provider).then(credentrals => {
-      return this.updateUserProfile(credentrals.user);
+    return this.afAuth.auth.signInWithPopup(provider).then(credential => {
+      return this.updateUserProfile(credential.user);
     });
   }
 
