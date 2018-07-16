@@ -33,12 +33,23 @@ export class AuthService {
   signUpWithEmail(email: string, password: string) {
     return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
       .then(credential => {
+        this.sendVerificationEmail();
         return this.updateUserProfile(credential.user);
       });
   }
 
   signOut() {
     return this.afAuth.auth.signOut();
+  }
+
+  private sendVerificationEmail() {
+    const user = auth().currentUser;
+    user.sendEmailVerification().then(() => {
+      console.log('Verification email was sent');
+    })
+    .catch(() => {
+      console.log('Error while sending verification email');
+    });
   }
 
   private oAuth(provider) {
