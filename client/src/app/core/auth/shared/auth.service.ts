@@ -44,6 +44,7 @@ export class AuthService {
 
   private sendVerificationEmail() {
     const user = auth().currentUser;
+    auth().useDeviceLanguage();
     user.sendEmailVerification().then(() => {
       console.log('Verification email was sent');
     })
