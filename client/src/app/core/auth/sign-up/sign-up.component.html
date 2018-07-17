@@ -44,6 +44,9 @@
           Password is too <strong>weak</strong>
         </mat-error>
       </mat-form-field>
+      <div class="form-message error" *ngIf="submitError">
+        {{ submitError.message }}
+      </div>
       <button type="submit" class="submit-button" mat-stroked-button color="primary">Get started</button>
     </form>
   </article>

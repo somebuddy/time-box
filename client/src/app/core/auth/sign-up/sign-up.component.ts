@@ -8,6 +8,7 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./sign-up.component.scss']
 })
 export class SignUpComponent implements OnInit {
+  submitError = null;
 
   constructor(public auth: AuthService) { }
 
@@ -16,11 +17,12 @@ export class SignUpComponent implements OnInit {
 
   register(regForm: NgForm) {
     const { email, password } = regForm.value;
+    this.submitError = null;
     this.auth.signUpWithEmail(email, password).then(() => {
       console.log('User registered');
     })
     .catch(error => {
-      console.log('Registration error', error);
+      this.submitError = error;
     });
   }
 

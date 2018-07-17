@@ -63,3 +63,13 @@
         margin: 1.5rem 0;
     }
 }
+
+.form-message {
+    text-align: center;
+    margin-top: 1.5rem;
+    padding: .75rem 1rem;
+
+    &.error {
+        color: #d50000;
+    }
+}
