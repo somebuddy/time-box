@@ -1,5 +1,5 @@
 <section class="sign-up-view">
-  <header class="mat-toolbar">Create account</header>
+  <header>Create account</header>
   <article class="sign-up-social">
     <header class="mat-caption">Quick connent with</header>
     <div class="social-options">
@@ -21,7 +21,7 @@
     <header class="mat-caption">or register with email</header>
     <form class="sign-up-form" #regForm="ngForm" (ngSubmit)="register(regForm)">
       <mat-form-field>
-        <input type="email" name="email" email required ngModel #emailInput="ngModel" 
+        <input type="email" name="email" email required ngModel #emailInput="ngModel"
           matInput placeholder="Your email...">
         <mat-icon matSuffix>email</mat-icon>
         <mat-error *ngIf="emailInput.hasError('email') && !emailInput.hasError('required')">

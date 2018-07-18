@@ -1,17 +1,51 @@
-<article class="sign-up-social">
-  <header class="mat-caption">Quick connent with</header>
-  <div class="social-options">
-    <button mat-raised-button color="google" (click)="auth.signUpWithGoogle()">
-      <fa-icon [icon]="['fab', 'google']"></fa-icon> Google
-    </button>
-    <button mat-raised-button color="facebook" disabled>
-      <fa-icon [icon]="['fab', 'facebook']"></fa-icon> Facebook
-    </button>
-    <button mat-raised-button color="twitter" disabled>
-      <fa-icon [icon]="['fab', 'twitter']"></fa-icon> Twitter
-    </button>
-    <button mat-raised-button color="github" disabled>
-      <fa-icon [icon]="['fab', 'github']"></fa-icon> Github
-    </button>
-  </div>
-</article>
+<section class="sign-in-view">
+  <header>Create account</header>
+  <article class="sign-in-social">
+    <header class="mat-caption">Quick connent with</header>
+    <div class="social-options">
+      <button mat-raised-button color="google" (click)="auth.signUpWithGoogle()">
+        <fa-icon [icon]="['fab', 'google']"></fa-icon> Google
+      </button>
+      <button mat-raised-button color="facebook" disabled>
+        <fa-icon [icon]="['fab', 'facebook']"></fa-icon> Facebook
+      </button>
+      <button mat-raised-button color="twitter" disabled>
+        <fa-icon [icon]="['fab', 'twitter']"></fa-icon> Twitter
+      </button>
+      <button mat-raised-button color="github" disabled>
+        <fa-icon [icon]="['fab', 'github']"></fa-icon> Github
+      </button>
+    </div>
+  </article>
+  <article class="sign-in-email">
+    <header class="mat-caption">or sign in with email</header>
+    <form class="sign-in-form" #regForm="ngForm" (ngSubmit)="signin(regForm)">
+      <mat-form-field>
+        <input type="email" name="email" email required ngModel #emailInput="ngModel"
+          matInput placeholder="Your email...">
+        <mat-icon matSuffix>email</mat-icon>
+        <mat-error *ngIf="emailInput.hasError('email') && !emailInput.hasError('required')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="emailInput.hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input type="password" name="password" password required ngModel #pwdInput="ngModel"
+          matInput placeholder="Your password...">
+        <mat-icon matSuffix>security</mat-icon>
+        <mat-error *ngIf="pwdInput.hasError('required')">
+          Password is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <div class="form-message error" *ngIf="submitError">
+        {{ submitError.message }}
+      </div>
+      <button type="submit" class="submit-button" mat-stroked-button color="primary">Sign in</button>
+    </form>
+  </article>
+  <footer>
+    Don't have the account yet? <a routerLink="/auth/signup">Create it</a>
+  </footer>
+</section>
