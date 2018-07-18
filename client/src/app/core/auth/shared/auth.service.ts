@@ -38,6 +38,13 @@ export class AuthService {
       });
   }
 
+  signInWithEmail(email: string, password: string) {
+    return this.afAuth.auth.signInWithEmailAndPassword(email, password)
+      .then(credential => {
+        return of(credential.user);
+      });
+  }
+
   signOut() {
     return this.afAuth.auth.signOut();
   }

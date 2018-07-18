@@ -17,11 +17,13 @@ export class SignInComponent implements OnInit {
 
   signin(form: NgForm) {
     const { email, password } = form.value;
-    this.auth.signUpWithEmail(email, password)
-      .then(() => {
-        console.log('User signed in');
+    this.submitError = null;
+    this.auth.signInWithEmail(email, password)
+      .then(user => {
+        console.log('User signed in', user);
       })
       .catch(error => {
+        this.submitError = error;
         console.log('User sign in error', error);
       });
   }
