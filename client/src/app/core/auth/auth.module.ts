@@ -10,6 +10,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserWidgetComponent } from './user-widget/user-widget.component';
 import { UiModule } from '../../ui/ui.module';
+import { SignUpSocialOptionsComponent } from './sign-up-social-options/sign-up-social-options.component';
 
 @NgModule({
   imports: [
@@ -20,6 +21,12 @@ import { UiModule } from '../../ui/ui.module';
     FormsModule,
     UiModule,
   ],
-  declarations: [SignUpComponent, SignInComponent, UserProfileComponent, UserWidgetComponent],
+  declarations: [
+    SignUpComponent,
+    SignInComponent,
+    UserProfileComponent,
+    UserWidgetComponent,
+    SignUpSocialOptionsComponent
+  ],
 })
 export class AuthModule { }

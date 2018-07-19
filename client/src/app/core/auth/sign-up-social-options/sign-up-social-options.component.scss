@@ -1,0 +1,26 @@
+.social-options {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  align-content: stretch;
+  justify-content: center;
+  max-width: 200px;
+  margin: .75rem auto;
+
+  button {
+      margin-bottom: 0.75rem;
+  }
+
+  @media (min-width: 600px) {
+      flex-flow: row wrap;
+      align-content: center;
+      align-items: center;
+      max-width: none;
+      margin: .75rem 0;
+
+      button {
+          margin-right: 0.5rem;
+          margin-left: 0.5rem;
+      }
+  }
+}

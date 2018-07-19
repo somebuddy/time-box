@@ -2,20 +2,7 @@
   <header>Create account</header>
   <article class="sign-up-social">
     <header class="mat-caption">Quick connent with</header>
-    <div class="social-options">
-      <button mat-raised-button color="google" (click)="auth.signUpWithGoogle()">
-        <fa-icon [icon]="['fab', 'google']"></fa-icon> Google
-      </button>
-      <button mat-raised-button color="facebook" disabled>
-        <fa-icon [icon]="['fab', 'facebook']"></fa-icon> Facebook
-      </button>
-      <button mat-raised-button color="twitter" disabled>
-        <fa-icon [icon]="['fab', 'twitter']"></fa-icon> Twitter
-      </button>
-      <button mat-raised-button color="github" disabled>
-        <fa-icon [icon]="['fab', 'github']"></fa-icon> Github
-      </button>
-    </div>
+    <tb-sign-up-social-options></tb-sign-up-social-options>
   </article>
   <article class="sign-up-email">
     <header class="mat-caption">or register with email</header>
