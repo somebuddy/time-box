@@ -1,0 +1,50 @@
+.sign-up-view, .sign-up-view {
+  display: flex;
+  flex-flow: column nowrap;
+  align-content: stretch;
+  align-items: stretch;
+  max-width: 500px;
+  margin: 1.5rem auto;
+
+  header {
+    text-align: center;
+    margin: .75rem 0;
+    color: #777;
+  }
+
+  > header {
+    text-transform: uppercase;
+  }
+
+  footer {
+    text-align: center;
+    margin: .75rem 0;
+  }
+
+  article {
+    margin: .75rem 0;
+  }
+}
+
+
+.sign-in-form, .sign-up-form {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: stretch;
+  align-content: stretch;
+
+  .submit-button {
+      align-self: center;
+      margin: 1.5rem 0;
+  }
+}
+
+.form-message {
+  text-align: center;
+  margin-top: 1.5rem;
+  padding: .75rem 1rem;
+
+  &.error {
+      color: #d50000;
+  }
+}
