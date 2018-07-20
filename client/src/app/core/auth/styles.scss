@@ -13,6 +13,10 @@ $hgap: 1rem;
   @include flex-column();
   max-width: 500px;
   margin: $vgap*2 auto;
+  padding: $vgap*2 $hgap*2;
+  background: white;
+  border: 1px solid #EFEFEF;
+  border-radius: $hgap/4;
 
   header, footer, article {
     margin: 0;

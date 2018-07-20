@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../shared/auth.service';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'tb-sign-up',
@@ -10,7 +11,7 @@ import { NgForm } from '@angular/forms';
 export class SignUpComponent implements OnInit {
   submitError = null;
 
-  constructor(public auth: AuthService) { }
+  constructor(public auth: AuthService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -19,7 +20,7 @@ export class SignUpComponent implements OnInit {
     const { email, password } = regForm.value;
     this.submitError = null;
     this.auth.signUpWithEmail(email, password).then(() => {
-      console.log('User registered');
+      this.router.navigate(['/auth/profile']);
     })
     .catch(error => {
       this.submitError = error;

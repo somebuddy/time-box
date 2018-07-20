@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../shared/auth.service';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'tb-sign-in',
@@ -10,7 +11,7 @@ import { NgForm } from '@angular/forms';
 export class SignInComponent implements OnInit {
   submitError = null;
 
-  constructor(public auth: AuthService) { }
+  constructor(public auth: AuthService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -20,7 +21,7 @@ export class SignInComponent implements OnInit {
     this.submitError = null;
     this.auth.signInWithEmail(email, password)
       .then(user => {
-        console.log('User signed in', user);
+        this.router.navigate(['/']);
       })
       .catch(error => {
         this.submitError = error;

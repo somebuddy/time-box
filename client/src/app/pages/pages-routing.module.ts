@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: 'history', component: HistoryPageComponent },
   { path: 'dashboard', component: DashboardPageComponent },
   { path: 'stats', component: StatisticsPageComponent },
+  { path: '', pathMatch: 'full', redirectTo: '/dashboard'},
 ];
 
 @NgModule({
