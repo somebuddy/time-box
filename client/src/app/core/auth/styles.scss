@@ -1,48 +1,46 @@
-.sign-up-view, .sign-up-view {
+$line-height: 1.5rem;
+$vgap: $line-height/2;
+$hgap: 1rem;
+
+@mixin flex-column {
   display: flex;
   flex-flow: column nowrap;
   align-content: stretch;
   align-items: stretch;
-  max-width: 500px;
-  margin: 1.5rem auto;
+}
 
-  header {
+.sign-up-view, .sign-in-view {
+  @include flex-column();
+  max-width: 500px;
+  margin: $vgap*2 auto;
+
+  header, footer, article {
+    margin: 0;
+    margin-bottom: $vgap*2;
+  }
+
+  header, footer {
     text-align: center;
-    margin: .75rem 0;
     color: #777;
   }
 
   > header {
     text-transform: uppercase;
   }
-
-  footer {
-    text-align: center;
-    margin: .75rem 0;
-  }
-
-  article {
-    margin: .75rem 0;
-  }
 }
 
-
 .sign-in-form, .sign-up-form {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: stretch;
-  align-content: stretch;
+  @include flex-column();
 
   .submit-button {
       align-self: center;
-      margin: 1.5rem 0;
+      margin: $vgap*2 0;
   }
 }
 
 .form-message {
   text-align: center;
-  margin-top: 1.5rem;
-  padding: .75rem 1rem;
+  padding: $vgap $hgap*2;
 
   &.error {
       color: #d50000;
