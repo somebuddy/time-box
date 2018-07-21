@@ -11,6 +11,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserWidgetComponent } from './user-widget/user-widget.component';
 import { UiModule } from '../../ui/ui.module';
 import { SignUpSocialOptionsComponent } from './sign-up-social-options/sign-up-social-options.component';
+import { UserProfileFormComponent } from './user-profile-form/user-profile-form.component';
 
 @NgModule({
   imports: [
@@ -26,7 +27,8 @@ import { SignUpSocialOptionsComponent } from './sign-up-social-options/sign-up-s
     SignInComponent,
     UserProfileComponent,
     UserWidgetComponent,
-    SignUpSocialOptionsComponent
+    SignUpSocialOptionsComponent,
+    UserProfileFormComponent
   ],
 })
 export class AuthModule { }
