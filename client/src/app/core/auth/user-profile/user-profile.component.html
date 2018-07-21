@@ -7,7 +7,7 @@
       <!-- <button mat-button><mat-icon>public</mat-icon>Make public</button> -->
       <button mat-stroked-button color="primary">Edit profile</button>
       <button mat-flat-button color="primary" style="display: none">Update profile</button>
-      <button mat-raised-button color="warn" (click)="auth.signOut()">Sign out</button>
+      <button mat-raised-button color="warn" (click)="signOut()">Sign out</button>
     </div>
   </header>
   <section class="user-pic" *ngIf="user.photoURL">
