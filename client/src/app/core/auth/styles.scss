@@ -9,6 +9,13 @@ $hgap: 1rem;
   align-items: stretch;
 }
 
+@mixin flex-row {
+  display: flex;
+  flex-flow: row nowrap;
+  align-content: stretch;
+  align-items: stretch;
+}
+
 .sign-up-view, .sign-in-view {
   @include flex-column();
   max-width: 500px;
