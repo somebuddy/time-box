@@ -1,4 +1,4 @@
-<section class="sign-up-view">
+<section class="sign-up-view" *ngIf="!(auth.user | async)">
   <header>Create account</header>
   <article class="sign-up-social">
     <header class="mat-caption">Quick connent with</header>

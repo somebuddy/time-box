@@ -1,4 +1,4 @@
-<section class="sign-in-view">
+<section class="sign-in-view" *ngIf="!(auth.user | async)">
   <header>Sign in</header>
   <article class="sign-in-social">
     <header class="mat-caption">with</header>

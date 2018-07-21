@@ -18,6 +18,9 @@ export class SignUpSocialOptionsComponent implements OnInit {
     this.auth.signUpWithGoogle()
       .then(() => {
         this.router.navigate(['/']);
+      })
+      .catch(error => {
+        console.log('Social login error', error);
       });
   }
 
