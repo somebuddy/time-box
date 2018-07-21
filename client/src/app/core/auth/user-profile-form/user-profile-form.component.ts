@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../shared/auth.service';
 
 @Component({
   selector: 'tb-user-profile-form',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserProfileFormComponent implements OnInit {
 
-  constructor() { }
+  constructor(public auth: AuthService) { }
 
   ngOnInit() {
   }
 
+  cancel() {
+    console.log('Updates canceled');
+  }
+
+  save() {
+    console.log('Saving updates');
+  }
 }

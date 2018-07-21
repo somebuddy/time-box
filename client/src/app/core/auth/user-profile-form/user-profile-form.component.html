@@ -1,3 +1,46 @@
-<p>
-  user-profile-form works!
-</p>
+<div *ngIf="!(auth.user | async)">Anonymous user</div>
+
+<section *ngIf="auth.user | async as user" class="user-profile">
+  <header>
+    <div class="toolbar">
+      <span class="filler"></span>
+      <button mat-flat-button color="primary" (click)="save()">Update profile</button>
+      <button mat-flat-button color="warn" (click)="cancel()">Cancel</button>
+    </div>
+  </header>
+  <section class="user-pic" *ngIf="user.photoURL">
+    <div class="label">Profile picture:</div>
+    <img [src]="user.photoURL" width="128px">
+    <button mat-flat-button disabled>Change image</button>
+  </section>
+
+  <section class="user-info">
+    <mat-form-field>
+      <input
+        name="displayName"
+        matInput placeholder="Display name"
+        [value]="user.displayName">
+    </mat-form-field>
+
+    <div class="variable email">
+      <div class="label"><mat-icon>email</mat-icon></div>
+      <div class="value">{{ user.email }}</div>
+    </div>
+
+    <mat-form-field>
+      <input
+          name="displayName"
+          matInput placeholder="Display name"
+          [value]="'Ukraine'">
+      <mat-icon matPrefix>location_on</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+          name="displayName"
+          matInput placeholder="Display name"
+          [value]="'Sat Jul 21 2018'">
+      <mat-icon matPrefix>cake</mat-icon>
+    </mat-form-field>
+  </section>
+</section>
