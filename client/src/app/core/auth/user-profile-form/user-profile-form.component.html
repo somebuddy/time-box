@@ -1,10 +1,11 @@
 <div *ngIf="!(auth.user | async)">Anonymous user</div>
 
-<section *ngIf="auth.user | async as user" class="user-profile">
+<form *ngIf="auth.user | async as user" class="user-profile" #profileForm="ngForm" (submit)="save(profileForm)">
   <header>
     <div class="toolbar">
       <span class="filler"></span>
-      <button mat-flat-button color="primary" (click)="save()">Update profile</button>
+      <button type="submit" mat-flat-button color="primary">Update profile</button>
+      <button type="reset" mat-flat-button color="warn" (click)="cancel()">Reset</button>
       <button mat-flat-button color="warn" (click)="cancel()">Cancel</button>
     </div>
   </header>
@@ -17,9 +18,9 @@
   <section class="user-info">
     <mat-form-field>
       <input
-        name="displayName"
+        name="displayName" ngModel
         matInput placeholder="Display name"
-        [value]="user.displayName">
+        [(ngModel)]="user.displayName">
     </mat-form-field>
 
     <div class="variable email">
@@ -29,21 +30,21 @@
 
     <mat-form-field>
       <input
-          name="displayName"
-          matInput placeholder="Display name"
-          [value]="'Ukraine'">
+          name="country" ngModel
+          matInput placeholder="Your country"
+          [(ngModel)]="user.country">
       <mat-icon matPrefix>location_on</mat-icon>
     </mat-form-field>
 
     <mat-form-field>
       <input
-          name="birthdate"
-          matInput
-          [matDatepicker]="birthdatePicker" placeholder="Birthdate"
-          [value]="'Sat Jul 21 2000'">
+          name="birthdate" ngModel
+          matInput [matDatepicker]="birthdatePicker" placeholder="Birthdate"
+          [(ngModel)]="user.birthdate"
+          [max]="today">
       <mat-datepicker-toggle matSuffix [for]="birthdatePicker"></mat-datepicker-toggle>
       <mat-datepicker #birthdatePicker></mat-datepicker>
       <mat-icon matPrefix>cake</mat-icon>
     </mat-form-field>
   </section>
-</section>
+</form>
