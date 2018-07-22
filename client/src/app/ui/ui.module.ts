@@ -4,6 +4,7 @@ import { AppPageComponent } from './app-page/app-page.component';
 import { MaterialModule } from './material/material.module';
 import { RouterModule } from '@angular/router';
 import { IconsModule } from './icons/icons.module';
+import { NavAsideComponent } from './navigation/nav-aside/nav-aside.component';
 
 @NgModule({
   imports: [
@@ -12,7 +13,7 @@ import { IconsModule } from './icons/icons.module';
     RouterModule,
     IconsModule,
   ],
-  declarations: [AppPageComponent],
+  declarations: [AppPageComponent, NavAsideComponent],
   exports: [
     MaterialModule,
     IconsModule,
