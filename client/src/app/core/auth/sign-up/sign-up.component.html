@@ -34,7 +34,7 @@
       <div class="form-message error" *ngIf="submitError">
         {{ submitError.message }}
       </div>
-      <button type="submit" class="submit-button" mat-stroked-button color="primary">Get started</button>
+      <button type="submit" class="submit-button" mat-stroked-button color="primary" [disabled]="regForm.invalid">Get started</button>
     </form>
   </article>
   <footer>

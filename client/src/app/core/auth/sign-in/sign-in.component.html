@@ -35,7 +35,7 @@
           <a routerLink="/auth/signup">Create account</a>
         </span>
       </div>
-      <button type="submit" class="submit-button" mat-stroked-button color="primary">Sign in</button>
+      <button type="submit" class="submit-button" mat-stroked-button color="primary" [disabled]="regForm.invalid">Sign in</button>
     </form>
   </article>
   <footer>
