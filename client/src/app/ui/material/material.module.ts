@@ -8,8 +8,10 @@ import {
   MatIconModule,
   MatListModule,
   MatFormFieldModule,
-  MatInputModule
+  MatInputModule,
+  MatDatepickerModule
 } from '@angular/material';
+import { MatMomentDateModule } from '@angular/material-moment-adapter';
 
 
 @NgModule({
@@ -23,6 +25,8 @@ import {
     MatListModule,
     MatFormFieldModule,
     MatInputModule,
+    MatDatepickerModule,
+    MatMomentDateModule,
   ],
   declarations: [],
   exports: [
@@ -34,6 +38,8 @@ import {
     MatListModule,
     MatFormFieldModule,
     MatInputModule,
+    MatDatepickerModule,
+    MatMomentDateModule,
   ]
 })
 export class MaterialModule { }
